@@ -22,24 +22,21 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Sidebar (all sizes) */}
-      <div className=" fixed top-0 left-0 md:left-10 lg:left-20 h-full bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 w-16 md:w-64 z-10 flex flex-col">
+      {/* Responsive Sidebar */}
+      <div className="fixed top-0 left-0 h-full w-16 md:w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-10 flex flex-col transition-all duration-300">
         {/* Logo */}
-        <div className="lg:py-15 py-10 flex items-center justify-center md:justify-start h-16 px-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center justify-center md:justify-start h-16 px-4 border-b border-gray-200 dark:border-gray-700">
           <img
             src="images/logo 1.png"
-            alt=""
-            className="lg:w-25 lg:h-25 md:w-20 md:h-20 w-10 h-10"
+            alt="logo"
+            className="w-8 h-8 md:w-12 md:h-12"
           />
-          <h1 className="text-xl font-bold text-gray-800 dark:text-white hidden md:block">
+          <h1 className="hidden md:block ml-3 text-xl font-bold text-gray-800 dark:text-white">
             SnapLens
           </h1>
-          {/* <h1 className="text-xl font-bold text-gray-800 dark:text-white md:hidden">
-            📷
-          </h1> */}
         </div>
 
-        {/* Navigation */}
+        {/* Navigation Links */}
         <nav className="flex-grow p-2 md:p-4 mt-5 space-y-2">
           {links.map(({ to, icon, text }) => {
             const isActive = location.pathname === to;
@@ -60,10 +57,10 @@ export default function Sidebar() {
           })}
         </nav>
 
-        {/* Connect Button (replaces Snap & Mint) */}
+        {/* Connect Button */}
         <div className="p-2 md:p-4 mb-5">
           <button
-            onClick={() => console.log("Connect wallet")}
+            onClick={() => console.log("Connect Wallet")}
             className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-full flex items-center justify-center transition duration-200"
           >
             <span className="hidden md:inline">Connect</span>
@@ -72,7 +69,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Push content to the right */}
+      {/* Push main content to the right */}
       <div className="ml-16 md:ml-64" />
     </>
   );
